@@ -39,7 +39,7 @@
         }
     </script>
     <script>
-        // Enable hidden nav bar
+
         {
             const nav = document.querySelector(".nav");
             let lastScrollY = window.scrollY;
@@ -56,41 +56,110 @@
         }
 
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <script>
         var clicks = 0;
-
-function onClick() {
-  clicks += 1;
-  document.getElementById("clicks").innerHTML = clicks;
-  if(clicks == 100){
-    clicks = 0;
-    document.getElementById("clicks").innerHTML = clicks;
-  }
-};
-    </script>
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<button type="button" onClick="onClick()" class="guy" style="border: 0; background: transparent; " >
-    <img src="images/guy.gif" width=37% height=37% alt="guy" />
-  </button>
-  <a class = "clicker" id="clicks" width=10%></a>
-
-<div class="icon-bar">
-  <a href="https://www.linkedin.com/in/tadahiro-obayashi-62742a165/" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a>
-  <a href="https://github.com/tobayashi19" target="_blank" class="github"><i class="fa fa-github"></i></a>
-  <a href="https://www.instagram.com/tadahiroobayashi/" target="_blank" class="instagram"><i class="fa fa-instagram"></i></a>
-
-</div>
       
+        function onClick() {
+            
+            clicks += 1;
+            document.getElementById("clicks").innerHTML = clicks;
+            if (clicks == 100) {s
+
+                var count = 200;
+                var defaults = {
+                    origin: {
+                        x: .06,
+
+                        y: .9
+                    }
+
+                };
+
+                function fire(particleRatio, opts) {
+                    confetti(Object.assign({}, defaults, opts, {
+                        particleCount: Math.floor(count * particleRatio)
+                    }));
+                }
+
+                fire(0.25, {
+                    spread: 26,
+                    startVelocity: 55,
+                });
+                fire(0.2, {
+                    spread: 60,
+                });
+                fire(0.35, {
+                    spread: 100,
+                    decay: 0.91,
+                    scalar: 0.8
+                });
+                fire(0.1, {
+                    spread: 120,
+                    startVelocity: 25,
+                    decay: 0.92,
+                    scalar: 1.2
+                });
+                fire(0.1, {
+                    spread: 120,
+                    startVelocity: 45,
+                });
+
+
+            }
+            if (clicks == 1000) {
+                var end = Date.now() + (15 * 1000);
+
+                var colors = ['#bb0000', '#ffffff'];
+
+                (function frame() {
+                    confetti({
+                        particleCount: 2,
+                        angle: 60,
+                        spread: 55,
+                        origin: { x: 0 },
+                        colors: colors
+                    });
+                    confetti({
+                        particleCount: 2,
+                        angle: 120,
+                        spread: 55,
+                        origin: { x: 1 },
+                        colors: colors
+                    });
+
+                    if (Date.now() < end) {
+                        requestAnimationFrame(frame);
+                    }
+                }());
+            }
+        };
+    </script>
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <button type="button" onClick="onClick()" class="guy" style="border: 0; background: transparent; ">
+        <img src="images/guy.gif" width=37% height=37% alt="guy" />
+    </button>
+    <a class="clicker" id="clicks" width=10%></a>
+
+    <div class="icon-bar">
+        <a href="https://www.linkedin.com/in/tadahiro-obayashi-62742a165/" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a>
+        <a href="https://github.com/tobayashi19" target="_blank" class="github"><i class="fa fa-github"></i></a>
+        <a href="https://www.instagram.com/tadahiroobayashi/" target="_blank" class="instagram"><i class="fa fa-instagram"></i></a>
+
+    </div>
+
 
 
     <div id="about">
         <h1>Tadahiro Obayashi</h1>
         <h2>About Me</h2>
         <p>
-            Hello! My name is Tadahiro Obayashi and I am an aspiring game developer working as a software engineer. I can't remember a time that I have not blah blah l.sssssssssssssssssssssssssssssssssssssssss
+            Hello! My name is Tadahiro Obayashi and I am an aspiring game developer working as a software engineer. I
+            can't remember a time that I have not blah blah l.sssssssssssssssssssssssssssssssssssssssss
         </p>
     </div>
 
@@ -101,20 +170,15 @@ function onClick() {
     </div>
 
     <div id="resume">
+
         <h4>
             <img src="images/Tadahiro_Obayashi_Resume (3)-1.png" alt="resume" width=50%; height=50%; />
         </h4>
+
         <h5>
+        </h5>
 
-                
-
-            </h5>
     </div>
-
-
-       
-
-
 </body>
 
 </html>

@@ -67,7 +67,7 @@ body {
 .resume{
     color: #EEFBFB;
     text-decoration: none;
-    margin: 0 1em;
+    margin: 0 5em;
     font-weight: lighter;
     display: inline-block;
     position: relative;
@@ -77,8 +77,8 @@ body {
 .resume::before {
     content: "";
     position: absolute;
-    top: -2px;
-    left: -2px;
+    top: -3px;
+    left: 6px;
     width: 0;
     height: 0;
     background: transparent;
@@ -121,8 +121,8 @@ body {
 .resume::after {
     content: "";
     position: absolute;
-    top: -2px;
-    left: -2px;
+    top: 3px;
+    left: -10px;
     width: 0;
     height: 0;
     background: transparent;
@@ -242,7 +242,7 @@ h3 {
 .guy{
     position: fixed;
     top:90%;
-    right: 86.8%;
+    right: 85.5%;
     width: 15%;
     height: 33%;
     -webkit-transform: translateY(-50%);
