@@ -1,60 +1,120 @@
 <!DOCTYPE html>
 <html>
-    
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Tadahiro Obayashi's Website</title>
-        <meta name="description" content="A Website Made By Tadahiro Obayashi">
-        <link rel="stylesheet" href="main.css">
-       
-        <ul>
-            <li><a class="hover-underline-animation" href="aboutMe.html">About</a></li>
-            <li><a class="hover-underline-animation" href="resume.html">Resume</a></li>
-            <li><a class="hover-underline-animation" href="portfolio.html">Portfolio</a></li>
-            <li><a class="hover-underline-animation" href="workExperience.html">Experience</a></li>
-            <li><a class="hover-underline-animation" href="index.html">Home</a></li>
-            
-        </ul>
-        </head>
-    <body>
 
-        <button onclick="topFunction()" id="topBtn" title="Go to top">Top</button>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tadahiro Obayashi's Website</title>
+    <meta name="description" content="A Website Made By Tadahiro Obayashi">
+    <link rel="stylesheet" href="main.css">
 
-        <script>
-            
-            let mybutton = document.getElementById("topBtn");
-            window.onscroll = function() {scrollFunction()};
-            function scrollFunction() {
-            if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40)
-            {
+    <nav class="nav">
+        <a href="#about" class="nav__link">About</a>
+        <a href="#experience" class="nav__link">Experience</a>
+        <a href="#portfolio" class="nav__link">Portfolio</a>
+        <a href="#contact" class="nav__link">Contact</a>
+        <a href="images/Tadahiro_Obayashi_Resume (4).pdf" target="_blank" class="resume">Resume</a>
+    </nav>
+
+
+</head>
+
+<body>
+
+
+    <script>
+
+        let mybutton = document.getElementById("topBtn");
+        window.onscroll = function () { scrollFunction() };
+        function scrollFunction() {
+            if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
                 mybutton.style.display = "block";
-            } 
-            else
-            {
-             mybutton.style.display = "none";
             }
-            }function topFunction() 
-            {
-             document.body.scrollTop = 0;
-             document.documentElement.scrollTop = 0;
+            else {
+                mybutton.style.display = "none";
             }
-        </script>
+        } function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+    <script>
+        // Enable hidden nav bar
+        {
+            const nav = document.querySelector(".nav");
+            let lastScrollY = window.scrollY;
+
+            window.addEventListener("scroll", () => {
+                if (lastScrollY < window.scrollY) {
+                    nav.classList.add("nav--hidden");
+                } else {
+                    nav.classList.remove("nav--hidden");
+                }
+
+                lastScrollY = window.scrollY;
+            });
+        }
+
+    </script>
+    <script>
+        var clicks = 0;
+
+function onClick() {
+  clicks += 1;
+  document.getElementById("clicks").innerHTML = clicks;
+  if(clicks == 100){
+    clicks = 0;
+    document.getElementById("clicks").innerHTML = clicks;
+  }
+};
+    </script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<button type="button" onClick="onClick()" class="guy" style="border: 0; background: transparent; " >
+    <img src="images/guy.gif" width=37% height=37% alt="guy" />
+  </button>
+  <a class = "clicker" id="clicks" width=10%></a>
+
+<div class="icon-bar">
+  <a href="https://www.linkedin.com/in/tadahiro-obayashi-62742a165/" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a>
+  <a href="https://github.com/tobayashi19" target="_blank" class="github"><i class="fa fa-github"></i></a>
+  <a href="https://www.instagram.com/tadahiroobayashi/" target="_blank" class="instagram"><i class="fa fa-instagram"></i></a>
+
+</div>
+      
+
+
+    <div id="about">
         <h1>Tadahiro Obayashi</h1>
         <h2>About Me</h2>
-          
         <p>
             Hello! My name is Tadahiro Obayashi and I am an aspiring game developer working as a software engineer. I can't remember a time that I have not blah blah l.sssssssssssssssssssssssssssssssssssssssss
         </p>
-        
+    </div>
 
-        <h3> I think Portfolio here</h3>
-        <p>
-            Portfolio
-        </p>
+    <div id="experience">
+        <h3>
+            asdjhasdkjhaskjda
+        </h3>
+    </div>
+
+    <div id="resume">
         <h4>
-            <img src="images/Tadahiro_Obayashi_Resume (3)-1.png" alt="resume" width = 50%; height = 50%;/>
+            <img src="images/Tadahiro_Obayashi_Resume (3)-1.png" alt="resume" width=50%; height=50%; />
         </h4>
-        
-    </body>
+        <h5>
+
+                
+
+            </h5>
+    </div>
+
+
+       
+
+
+</body>
+
 </html>
