@@ -163,6 +163,7 @@ body {
 }
 
 
+  
 .clicker{
     font-family: monospace;
     position:fixed;
@@ -199,7 +200,7 @@ h3 {
     text-align: left;
     padding-top: 50%;
 }
-/* Fixed/sticky icon bar (vertically aligned 50% from the top of the screen) */
+
 .icon-bar {
     position: fixed;
     top:76%;
@@ -252,12 +253,6 @@ h3 {
 }
 .guy:hover{
     height: 36%;
-}
-
-img {
-    padding-left: 25%;
-    padding-right: 25%;
-
 }
 
 p {
